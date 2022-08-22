@@ -1,5 +1,5 @@
 type TrimLeft<S extends string> = S extends `${' '| '\n' | '\t'}${infer rightWords}` ? TrimLeft<rightWords> : S
-
+type TrimRight<S extends string> = S extends `${infer leftWords}${' '| '\n' | '\t'}` ? TrimLeft<leftWords> : S
 
 
 //  ts的类型中也能使用模版字符串
